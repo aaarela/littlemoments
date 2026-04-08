@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Moments — 7-Day Baby Bonding Routine</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FDFAF6;
+    --blush: #F2E4D8;
+    --dusty-rose: #D4A89A;
+    --terracotta: #C07D6A;
+    --sage: #9AB5A0;
+    --sage-light: #C8DDD0;
+    --deep: #3A3230;
+    --mid: #6B5C56;
+    --soft: #9E8C87;
+    --card-shadow: 0 4px 24px rgba(58,50,48,0.08);
+    --card-shadow-hover: 0 8px 40px rgba(58,50,48,0.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    line-height: 1.65;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: 'Lora', Georgia, serif; line-height: 1.25; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212,168,154,0.2);
+    padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Lora', serif; font-size: 1.15rem;
+    color: var(--terracotta); font-style: italic; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.01em;
+  }
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 500;
+    background: var(--terracotta); color: #fff;
+    border: none; border-radius: 100px; padding: 9px 20px;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: #a86855; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 8vw 4rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .hero-text { max-width: 540px; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terracotta);
+    background: rgba(212,168,154,0.15);
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 1.4rem;
+  }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); }
+
+  h1 {
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    color: var(--deep); margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  h1 em { color: var(--terracotta); font-style: italic; }
+
+  .hero-sub {
+    font-size: 1.05rem; color: var(--mid); margin-bottom: 2rem;
+    font-weight: 300; max-width: 420px; line-height: 1.7;
+  }
+
+  .hero-actions { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--terracotta); color: #fff;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
+    border: none; border-radius: 100px; padding: 16px 34px;
+    cursor: pointer; text-decoration: none;
+    box-shadow: 0 6px 24px rgba(192,125,106,0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { background: #a86855; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192,125,106,0.4); }
+  .btn-primary svg { flex-shrink: 0; }
+
+  .trust-line {
+    font-size: 0.8rem; color: var(--soft);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .trust-line span { color: var(--sage); }
+
+  /* ── PHONE MOCKUP ── */
+  .phone-wrap {
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+  }
+  .phone-wrap::before {
+    content: '';
+    position: absolute; width: 280px; height: 280px;
+    background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+    border-radius: 50%; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  .phone {
+    position: relative; z-index: 1;
+    width: 230px;
+    background: #1E1A18;
+    border-radius: 36px;
+    padding: 14px 10px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 24px 60px rgba(30,26,24,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  .phone-notch {
+    width: 70px; height: 8px;
+    background: #0f0d0c; border-radius: 100px;
+    margin: 0 auto 10px;
+  }
+  .phone-screen {
+    background: linear-gradient(160deg, #2D2420 0%, #1A1614 100%);
+    border-radius: 26px; overflow: hidden;
+    padding: 18px 14px 16px;
+    min-height: 380px;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .phone-screen::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(212,168,154,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .phone-day-badge {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--dusty-rose);
+    opacity: 0.8; margin-bottom: 14px; text-align: center;
+  }
+  .phone-title {
+    font-family: 'Lora', serif; font-style: italic;
+    font-size: 0.78rem; color: #F5EDE6;
+    text-align: center; margin-bottom: 16px; opacity: 0.9;
+  }
+  .rhyme-lines { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+  .rhyme-line {
+    font-size: 0.7rem; color: rgba(245,237,230,0.4);
+    text-align: center; line-height: 1.5;
+    padding: 5px 0;
+    transition: all 0.5s ease;
+  }
+  .rhyme-line.past { color: rgba(245,237,230,0.25); font-size: 0.68rem; }
+  .rhyme-line.active {
+    color: #F5EDE6;
+    font-size: 0.8rem;
+    font-family: 'Lora', serif;
+    opacity: 1;
+    background: rgba(212,168,154,0.1);
+    border-radius: 8px; padding: 7px 8px;
+  }
+  .rhyme-line.next { color: rgba(245,237,230,0.45); }
+
+  .phone-divider {
+    height: 1px; background: rgba(212,168,154,0.15);
+    margin: 4px 0 14px;
+  }
+  .touch-prompt {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(154,181,160,0.15);
+    border: 1px solid rgba(154,181,160,0.25);
+    border-radius: 12px; padding: 9px 10px;
+  }
+  .touch-icon {
+    width: 28px; height: 28px;
+    background: rgba(154,181,160,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .touch-text { font-size: 0.62rem; color: var(--sage-light); line-height: 1.4; }
+  .touch-text strong { color: #C8DDD0; font-weight: 500; display: block; }
+
+  .phone-progress {
+    display: flex; gap: 4px; justify-content: center; margin-top: 14px;
+  }
+  .prog-dot {
+    width: 18px; height: 3px; border-radius: 2px;
+    background: rgba(245,237,230,0.2);
+  }
+  .prog-dot.done { background: var(--dusty-rose); }
+  .prog-dot.active { background: #F5EDE6; width: 28px; }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 5rem 5vw; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-center { text-align: center; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--terracotta);
+    margin-bottom: 1rem; display: block;
+  }
+  h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    color: var(--deep); margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1.05rem; color: var(--mid);
+    max-width: 580px; margin: 0 auto 3rem;
+    font-weight: 300; line-height: 1.7;
+  }
+
+  /* ── PROBLEM ── */
+  .problem-section {
+    background: linear-gradient(135deg, #F7EEE6 0%, #F0E8E0 100%);
+  }
+  .problem-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+  .problem-card {
+    background: rgba(255,255,255,0.6); border-radius: 20px;
+    padding: 1.75rem; border: 1px solid rgba(212,168,154,0.2);
+  }
+  .problem-emoji { font-size: 1.6rem; margin-bottom: 0.75rem; display: block; }
+  .problem-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .problem-card p { font-size: 0.9rem; color: var(--mid); font-weight: 300; }
+
+  /* ── SOLUTION ── */
+  .solution-highlight {
+    background: linear-gradient(135deg, var(--terracotta), #a86855);
+    color: white; border-radius: 28px; padding: 3rem 3.5rem;
+    text-align: center; max-width: 700px; margin: 0 auto;
+    box-shadow: 0 16px 50px rgba(192,125,106,0.3);
+  }
+  .solution-highlight h2 { color: white; margin-bottom: 1rem; }
+  .solution-highlight p { color: rgba(255,255,255,0.85); font-weight: 300; max-width: 480px; margin: 0 auto; }
+  .solution-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    justify-content: center; margin-top: 1.75rem;
+  }
+  .solution-tag {
+    background: rgba(255,255,255,0.18); color: white;
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 0.82rem; font-weight: 400;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .step {
+    background: var(--warm-white); border-radius: 24px;
+    padding: 2rem 1.75rem; border: 1px solid rgba(212,168,154,0.15);
+    box-shadow: var(--card-shadow); position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .step:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+  .step-num {
+    font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600;
+    color: rgba(212,168,154,0.35); line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .step h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .step p { font-size: 0.88rem; color: var(--mid); font-weight: 300; }
+  .step-icon {
+    width: 44px; height: 44px; border-radius: 14px;
+    background: var(--blush); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1rem;
+  }
+
+  /* ── BENEFITS ── */
+  .benefits-section { background: var(--warm-white); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .benefit {
+    padding: 1.75rem; border-radius: 20px;
+    background: var(--cream); border: 1px solid rgba(212,168,154,0.15);
+    transition: transform 0.2s;
+  }
+  .benefit:hover { transform: translateY(-3px); }
+  .benefit-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .benefit h3 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .benefit p { font-size: 0.85rem; color: var(--mid); font-weight: 300; }
+
+  /* ── INCLUDED ── */
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+  .included-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--warm-white); border-radius: 18px;
+    padding: 1.4rem; border: 1px solid rgba(154,181,160,0.2);
+  }
+  .included-check {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--sage-light); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #5C8A6A; font-size: 0.85rem; font-weight: 600;
+    margin-top: 1px;
+  }
+  .included-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .included-item p { font-size: 0.82rem; color: var(--mid); font-weight: 300; }
+
+  /* ── TRUST ── */
+  .trust-section {
+    background: linear-gradient(135deg, #EEF4F0 0%, #E8F0EA 100%);
+  }
+  .trust-box {
+    background: white; border-radius: 24px;
+    padding: 2.5rem 3rem; max-width: 640px; margin: 0 auto;
+    border: 1px solid rgba(154,181,160,0.3);
+    box-shadow: 0 4px 20px rgba(154,181,160,0.12);
+    text-align: center;
+  }
+  .trust-box .trust-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .trust-box h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .trust-box p { font-size: 0.9rem; color: var(--mid); font-weight: 300; line-height: 1.7; }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: linear-gradient(160deg, #3A3230 0%, #2A2220 100%);
+    text-align: center; padding: 6rem 5vw;
+  }
+  .final-cta h2 { color: #F5EDE6; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem; }
+  .final-cta p { color: rgba(245,237,230,0.65); font-weight: 300; max-width: 480px; margin: 0 auto 2.5rem; }
+  .final-cta .btn-primary {
+    background: var(--dusty-rose); font-size: 1.05rem; padding: 18px 40px;
+    box-shadow: 0 8px 30px rgba(212,168,154,0.4);
+  }
+  .final-cta .btn-primary:hover { background: #c8927f; }
+  .final-cta .trust-line { color: rgba(245,237,230,0.4); justify-content: center; margin-top: 1rem; }
+  .final-cta .trust-line span { color: var(--sage); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #2A2220; padding: 2rem 5vw;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer p { font-size: 0.8rem; color: rgba(245,237,230,0.3); }
+  footer a { color: rgba(245,237,230,0.4); text-decoration: none; font-size: 0.8rem; }
+  footer a:hover { color: rgba(245,237,230,0.7); }
+
+  /* ── DECORATIVE ── */
+  .blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(60px); pointer-events: none; z-index: 0;
+  }
+
+  /* ── ANIMATION ── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.35s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* karaoke animation */
+  @keyframes karaokeShift {
+    0%   { --line-active: 0; }
+    30%  { --line-active: 1; }
+    60%  { --line-active: 2; }
+    90%  { --line-active: 3; }
+    100% { --line-active: 0; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr; padding: 4rem 6vw 3rem;
+      gap: 3rem; text-align: center; min-height: auto;
+    }
+    .hero-text { max-width: 100%; }
+    .hero-actions { align-items: center; }
+    .hero-sub { max-width: 100%; }
+    .phone-wrap { order: -1; }
+    .included-grid { grid-template-columns: 1fr; }
+    .trust-box { padding: 2rem 1.5rem; }
+    section { padding: 3.5rem 5vw; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Little Moments</a>
+  <a class="nav-cta" href="#cta">Get Instant Access</a>
+</nav>
+
+<!-- HERO -->
+<section style="padding:0; overflow:hidden; position:relative;">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="eyebrow fade-up"><span class="eyebrow-dot"></span>7-Day Baby Bonding Routine</div>
+      <h1 class="fade-up delay-1">Calm moments.<br><em>Deep connection.</em><br>Every single day.</h1>
+      <p class="hero-sub fade-up delay-2">A guided daily routine that helps you bond with your baby through gentle rhymes and loving touch — simple enough for tired parents, meaningful enough to last a lifetime.</p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#cta" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="white" stroke="none"/></svg>
+          Start the 7-Day Routine
+        </a>
+        <p class="trust-line"><span>✦</span> Instant digital access &nbsp;·&nbsp; No app needed &nbsp;·&nbsp; Begin today</p>
+      </div>
+    </div>
+
+    <!-- PHONE MOCKUP -->
+    <div class="phone-wrap fade-up delay-2">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-day-badge">Day 2 · Morning Routine</div>
+          <div class="phone-title">"The Tummy Time Song"</div>
+
+          <div class="rhyme-lines">
+            <div class="rhyme-line past">Little hands and little toes,</div>
+            <div class="rhyme-line active" id="activeLine">Watch how every morning grows,</div>
+            <div class="rhyme-line next">Feel the warmth of morning light,</div>
+            <div class="rhyme-line">Everything is soft and right.</div>
+          </div>
+
+          <div class="phone-divider"></div>
+
+          <div class="touch-prompt">
+            <div class="touch-icon">🤲</div>
+            <div class="touch-text">
+              <strong>Gentle touch</strong>
+              Slow circles on baby's back with fingertips — light, slow, loving.
+            </div>
+          </div>
+
+          <div class="phone-progress">
+            <div class="prog-dot done"></div>
+            <div class="prog-dot done"></div>
+            <div class="prog-dot active"></div>
+            <div class="prog-dot"></div>
+            <div class="prog-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="section-inner section-center">
+    <span class="section-label">You're not alone</span>
+    <h2>New parents want to connect.<br>But where do you even start?</h2>
+    <p class="section-intro">The early months can feel overwhelming. You love your baby more than anything — and yet, in the fog of feeds and sleep deprivation, simple connection can feel out of reach.</p>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <span class="problem-emoji">😴</span>
+        <h3>You're exhausted</h3>
+        <p>When you're running on little sleep, elaborate routines feel impossible. You need something simple that actually fits real life.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-emoji">💭</span>
+        <h3>You want to do it right</h3>
+        <p>You know touch and interaction matter for your baby's development — but it's hard to know what to do without guidance.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-emoji">🕐</span>
+        <h3>Time is short</h3>
+        <p>Most bonding resources feel like homework. You need something you can use right now, in the moment, with your baby in your arms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section>
+  <div class="section-inner section-center">
+    <span class="section-label">The solution</span>
+    <div class="solution-highlight">
+      <h2>Introducing the 7-Day Baby Bonding Routine</h2>
+      <p>A beautifully simple digital guide that brings rhyme, touch, and gentle routine together — so every day holds a moment that's just yours and your baby's.</p>
+      <div class="solution-tags">
+        <span class="solution-tag">Guided rhymes</span>
+        <span class="solution-tag">Gentle massage</span>
+        <span class="solution-tag">Daily structure</span>
+        <span class="solution-tag">No experience needed</span>
+        <span class="solution-tag">Beginner-friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner section-center">
+    <span class="section-label">How it works</span>
+    <h2>Three simple steps.<br>One beautiful moment.</h2>
+    <p class="section-intro">No preparation needed. No equipment. Just you, your baby, and a few quiet minutes.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📖</div>
+        <div class="step-num">01</div>
+        <h3>Open the routine</h3>
+        <p>Each day has its own short session. Open it on any device — phone, tablet, or laptop. No app to install.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🎵</div>
+        <div class="step-num">02</div>
+        <h3>Read the flowing rhyme</h3>
+        <p>The words move softly on screen like a gentle karaoke — making it natural and easy to read aloud to your baby.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🤲</div>
+        <div class="step-num">03</div>
+        <h3>Follow the touch guide</h3>
+        <p>Simple, illustrated prompts tell you exactly where and how to gently massage your baby as you read. Calm and connected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="section-inner section-center">
+    <span class="section-label">Why it matters</span>
+    <h2>Small moments,<br>big impact.</h2>
+    <p class="section-intro">Consistent touch and voice are among the most powerful things you can offer your baby in the first year.</p>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="benefit-icon">💛</div>
+        <h3>Strengthens bonding</h3>
+        <p>Skin-to-skin contact and eye contact build deep trust between parent and baby.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">🌿</div>
+        <h3>Creates calm moments</h3>
+        <p>A predictable, soothing routine helps settle both baby — and parent.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">🗣️</div>
+        <h3>Stimulates language</h3>
+        <p>Reading rhymes aloud is one of the best early language experiences you can give.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">✋</div>
+        <h3>Encourages touch</h3>
+        <p>Guided massage gives you confidence to interact physically with your baby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section>
+  <div class="section-inner">
+    <div class="section-center">
+      <span class="section-label">What you get</span>
+      <h2>Everything you need.<br>Nothing you don't.</h2>
+      <p class="section-intro">The 7-Day Baby Bonding Routine is intentionally simple — so you'll actually use it every day.</p>
+    </div>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>7-day guided structure</h3>
+          <p>One short session for each day of the week, with a gentle theme and focus.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>Flowing on-screen rhymes</h3>
+          <p>Beautifully formatted text that scrolls gently — easy to read aloud even half-asleep.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>Gentle massage prompts</h3>
+          <p>Step-by-step touch guidance that matches each rhyme — no guessing, no pressure.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>Instant digital access</h3>
+          <p>Works on any device, any time. No app, no account, no waiting.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>Beginner-friendly format</h3>
+          <p>Designed for parents who've never done baby massage before. Clear and confidence-building.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-check">✓</div>
+        <div>
+          <h3>Made for real everyday life</h3>
+          <p>Fits into nappy changes, bath time, or morning wake-ups. Short, warm, and real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="section-inner">
+    <div class="trust-box">
+      <div class="trust-icon">🌸</div>
+      <h3>A note for parents</h3>
+      <p>The 7-Day Baby Bonding Routine is designed to support calm, loving connection between parent and baby. It is not a medical or therapeutic programme. Every baby is different — follow your instincts, go at your own pace, and know that simply showing up for these moments is already enough. You're doing a wonderful job.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="cta">
+  <h2>Your baby is waiting<br><em style="font-style:italic; color:var(--dusty-rose);">for a moment with you.</em></h2>
+  <p>Start the 7-day routine today. Gentle. Simple. Yours.</p>
+  <a href="#" class="btn-primary">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="white" stroke="none"/></svg>
+    Get Instant Access
+  </a>
+  <p class="trust-line"><span>✦</span> Digital product &nbsp;·&nbsp; Available instantly &nbsp;·&nbsp; Start today</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Little Moments. All rights reserved.</p>
+  <div style="display:flex; gap:1.5rem;">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Karaoke animation on phone mockup
+  const lines = document.querySelectorAll('.rhyme-line');
+  const states = [
+    ['past','active','next',''],
+    ['past','past','active','next'],
+    ['','past','past','active'],
+    ['','','past','active'],
+  ];
+  let step = 0;
+  function updateKaraoke() {
+    const s = states[step % states.length];
+    lines.forEach((line, i) => {
+      line.className = 'rhyme-line' + (s[i] ? ' ' + s[i] : '');
+    });
+    step++;
+  }
+  setInterval(updateKaraoke, 2200);
+
+  // Intersection Observer for subtle fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.step, .benefit, .included-item, .problem-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
